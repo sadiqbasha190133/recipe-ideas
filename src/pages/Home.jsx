@@ -5,19 +5,19 @@ import RecipeModal from "../components/RecipeModal";
 import useFetch from "../hooks/useFetch";
 
 function Home() {
-  const [ingredient, setIngredient] = useState("");
+  const [api_url, setUrl] = useState("");
   const [selectedMeal, setSelectedMeal] = useState(null);
 
   const { data, loading, error } = useFetch(
-    ingredient
-      ? `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
+      api_url 
+      ? api_url
       : null
   );
 
   return (
     <main className="p-4 max-w-5xl mx-auto">
       {/* Search */}
-      <SearchBar onSearch={setIngredient} />
+      <SearchBar onSearch={setUrl} />
 
       {/* Results */}
       <section className="mt-6">
