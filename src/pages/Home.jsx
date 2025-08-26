@@ -30,7 +30,7 @@ function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {data?.meals?.map((meal) => (
             <RecipeCard
-            key={meal.idMeal}
+            key={meal.idMeal} 
             title={meal.strMeal}
             image={meal.strMealThumb}
             onClick={() => setSelectedMeal(meal.idMeal)}

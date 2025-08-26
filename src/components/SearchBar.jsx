@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
 
 const SearchBar = ({ onSearch }) => {
   const [searchMode, setSearchMode] = useState("ingredient"); // default mode
@@ -80,6 +79,17 @@ const SearchBar = ({ onSearch }) => {
           <input
             type="text"
             placeholder="Enter an ingredient (e.g., chicken)"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full border p-2 rounded-lg"
+            required
+          />
+        )}
+
+        {searchMode === "ingredients" && (
+          <input
+            type="text"
+            placeholder="Enter ingredients (e.g., onions, tomatoes)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full border p-2 rounded-lg"
