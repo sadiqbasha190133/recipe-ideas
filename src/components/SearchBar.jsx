@@ -41,8 +41,11 @@ const SearchBar = ({ onSearch }) => {
       case "random":
         apiUrl = `https://www.themealdb.com/api/json/v1/1/random.php`;
         break;
-      case "random10":
-        apiUrl = `https://www.themealdb.com/api/json/v1/1/randomselection.php`;
+      case "name":
+        apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
+        break;
+      case "first":
+        apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?f=${query}`;
         break;
       default:
         apiUrl = "";
@@ -57,7 +60,7 @@ const SearchBar = ({ onSearch }) => {
         {/* Search Mode Dropdown */}
         <div>
           <label className="block mb-2 font-medium text-gray-700">
-            What are you in the mood for?
+            Hello Taylor..🧑‍🍳 What are you in the mood for?
           </label>
           <select
             value={searchMode}
@@ -71,6 +74,8 @@ const SearchBar = ({ onSearch }) => {
             <option value="category">Search by Category</option>
             <option value="area">Search by Area (Cuisine)</option>
             <option value="random">Surprise Me (1 Random Recipe)</option>
+            <option value="name">Search by Name</option>
+            <option value="first">Search by First Letter</option>
           </select>
         </div>
 
@@ -86,10 +91,21 @@ const SearchBar = ({ onSearch }) => {
           />
         )}
 
-        {searchMode === "ingredients" && (
+        {searchMode === "name" && (
           <input
             type="text"
-            placeholder="Enter ingredients (e.g., onions, tomatoes)"
+            placeholder="Enter ingredients (e.g., Arrabiata)"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full border p-2 rounded-lg"
+            required
+          />
+        )}
+
+        {searchMode === "first" && (
+          <input
+            type="text"
+            placeholder="Enter first letter of Meal Name: eg., a"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full border p-2 rounded-lg"

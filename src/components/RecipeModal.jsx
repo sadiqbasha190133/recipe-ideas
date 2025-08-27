@@ -26,7 +26,7 @@ function RecipeModal({ mealId, onClose }) {
 
             {meal && (
             <div>
-                <h2 className="text-2xl font-bold mb-3 text-green-700">{meal.strMeal}</h2>
+                <h2 className="text-2xl font-bold mb-3 text-green-700">{meal.strMeal} 😋</h2>
                 <img
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
@@ -38,20 +38,22 @@ function RecipeModal({ mealId, onClose }) {
                 </p>
 
                 <h3 className="font-semibold text-lg mb-2 text-gray-700">Ingredients:</h3>
-                <ul className="list-disc list-inside space-y-1 text-gray-800">
+                <ul className="list-none list-inside space-y-1 text-gray-800">
                 {Array.from({ length: 20 }).map((_, i) => {
                     const ingredient = meal[`strIngredient${i + 1}`];
                     const measure = meal[`strMeasure${i + 1}`];
                     return (
                     ingredient &&
                     ingredient.trim() && (
-                        <li key={i}>
-                        <span className="font-medium">{ingredient}</span> — {measure}
+                      
+                        <li key={i} >
+                        👉 <span className="font-medium">{ingredient}</span> — {measure}
                         </li>
                     )
                     );
                 })}
                 </ul>
+                <h3 className="text-xl text-center font-semibold mb-3 mt-2 text-green-700">Happy Cooking..! 😊</h3>
             </div>
             )}
         </div>

@@ -13,7 +13,7 @@ function useFetch(url) {
       setError(null);
       try {
         const res = await fetch(url);
-        if (!res.ok) throw new Error("Failed to fetch");
+        if (!res.ok) throw new Error("Failed to fetch Please check your Network connection");
         const json = await res.json();
         setData(json);
       } catch (err) {
