@@ -68,9 +68,13 @@ Features Developed
     UI Feedback: Loading spinners, error states, empty states
 
 Technical Implementation
+
     # To run this project in the local computer follow this command
+
     git clone https://github.com/sadiqbasha190133/recipe-ideas.git
+
     npm install # to install dependencies
+    
     npm run dev # to start the server
 
 🚀 View Project: https://3mx7mn-5173.csb.app/
