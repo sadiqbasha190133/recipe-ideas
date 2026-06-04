@@ -77,7 +77,7 @@ Features Developed
 
     npm run dev # to start the server
 
-🚀 View Project: https://3mx7mn-5173.csb.app/
+🚀 View Project: https://think-recipes.netlify.app/
 
 
 ## Project Images:
