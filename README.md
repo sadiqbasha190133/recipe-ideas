@@ -55,7 +55,7 @@ Features Developed
 
 7) Technical Implementations
 
-    Frontend: React.js
+    Frontend: React
 
     State Management: React Hooks (useState, useEffect)
 
